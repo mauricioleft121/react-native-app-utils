@@ -5,14 +5,16 @@
 
 A simple React-Native utils library with random useful functions.  
 **Mostly for use with background service tasks like notification onReceive events.**  
-Currently supporting Android 5+, iOS will eventually be supported later.  
+Currently supporting Android 5+, iOS will eventually be supported later.
+
+Forked from (<https://github.com/stumbleapp/react-native-app-utils>)
 
 # Quick Start
 
 In a lot of cases if you are using the latest version of React Native then you should be able to run one of the preferred package install methods and immediately get going.
 
-**npm**: `npm install react-native-app-utils`  
-**yarn**: `yarn add react-native-app-utils`  
+**npm**: `npm install @saserinn/react-native-app-utils`  
+**yarn**: `yarn add @saserinn/react-native-app-utils`  
 
 # Installation
 
@@ -40,21 +42,21 @@ You won't usually need to do anything past this point, everything should just li
 ## Older React Native Versions
 
 You should be able to run the following command to get everything linked up.  
-`npx react-native link react-native-app-utils`  
+`npx react-native link @saserinn/react-native-app-utils`  
 
 **If for some reason that doesn't work then you can follow the manual linking steps below.**
 
 Inside `android/app/build.gradle` add the following line in the existing dependencies section.
 
 ```gradle
-implementation project(':react-native-app-utils')
+implementation project(':@saserinn/react-native-app-utils')
 ```
 
 Inside `android/settings.gradle` add these lines to the bottom of the file.
 
 ```gradle
 include ':react-native-app-utils'
-project(':react-native-app-utils').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-app-utils/android')
+project(':react-native-app-utils').projectDir = new File(rootProject.projectDir, '../node_modules/@saserinn/@saserinn/react-native-app-utils/android')
 ```
 
 Inside `MainApplication.java` import and add our package to the existing package list.
@@ -83,7 +85,7 @@ import {
     WifiLock,
     ScreenLock,
     PictureInPicture
-} from 'react-native-app-utils';
+} from '@saserinn/react-native-app-utils';
 ```
 
 This will get your app to start or move to the front if it's already running.  **Might not work on some devices as restrictions starting apps from background services can be applied.**
